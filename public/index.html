@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Piriyalai Wifi Register</title>
+
+  <!-- update the version number as needed -->
+  <script defer src="/__/firebase/8.6.5/firebase-app.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <script defer src="/__/firebase/8.6.5/firebase-auth.js"></script>
+  <script defer src="/__/firebase/8.6.5/firebase-database.js"></script>
+  <script defer src="/__/firebase/8.6.5/firebase-firestore.js"></script>
+  <script defer src="/__/firebase/8.6.5/firebase-functions.js"></script>
+  <script defer src="/__/firebase/8.6.5/firebase-messaging.js"></script>
+  <script defer src="/__/firebase/8.6.5/firebase-storage.js"></script>
+  <script defer src="/__/firebase/8.6.5/firebase-analytics.js"></script>
+  <script defer src="/__/firebase/8.6.5/firebase-remote-config.js"></script>
+  <script defer src="/__/firebase/8.6.5/firebase-performance.js"></script>
+  <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+  <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+  <script>
+    function centerObj() {
+      var height = 100;
+      var width = 400;
+      height = height / 2;
+      height = String("-" + height + "px");
+      width = width / 2;
+      width = String("-" + width + "px");
+
+      var container = document.getElementById('MyDiv');
+      container.style.marginTop;
+      container.style.position = "absolute";
+      container.style.top = "20%";
+      container.style.left = "50%";
+      container.style.marginTop = height;/* half elements height*/
+      container.style.marginLeft = width;/* half elements width*/
+    }
+  </script>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<div id="message">
+</div>
+<link href=”//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css” rel=”stylesheet” />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css"
+  integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
+  rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<body onload="centerObj()">
+  <div class="pt-4"></div>
+
+  <style>
+    body {
+      background-image: url("https://i.redd.it/5hyflr02smo21.jpg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      -o-background-size: 100% 100%, auto;
+      -moz-background-size: 100% 100%, auto;
+      -webkit-background-size: 100% 100%, auto;
+      background-size: 100% 100%, auto;
+    }
+
+
+
+    @font-face {
+      font-family: 'Material Icons';
+      font-family: 'Mitr', sans-serif;
+      src: url('JasmineUPC');
+      font-style: normal;
+      font-weight: 400;
+      src: url(https://example.com/MaterialIcons-Regular.eot);
+      /* For IE6-8 */
+      src: local('Material Icons'),
+        local('MaterialIcons-Regular'),
+        url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+        url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+        url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+    }
+
+    .font1 {
+      font-family: 'Mitr', sans-serif;
+      font-size: 17px;
+    }
+
+    #img_container {
+      border: 1px solid grey;
+      height: 250px;
+      width: 500px;
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    body {
+      margin: 0 auto;
+      width: 800px;
+    }
+
+    #btn_s {
+      width: 100px;
+    }
+
+    #btn_i {
+      width: 125px;
+    }
+
+    #formbox {
+      width: 550px;
+      margin: auto 0;
+      text-align: center;
+    }
+
+    #mainpage {
+      margin: auto;
+      width: 950px;
+    }
+
+    span.fa {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+    }
+
+    .form-group {
+      position: relative;
+    }
+
+    .material-icons {
+      font-family: 'Material Icons';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      /* Preferred icon size */
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+
+      /* Support for all WebKit browsers. */
+      -webkit-font-smoothing: antialiased;
+      /* Support for Safari and Chrome. */
+      text-rendering: optimizeLegibility;
+
+      /* Support for Firefox. */
+      -moz-osx-font-smoothing: grayscale;
+
+      /* Support for IE. */
+      font-feature-settings: 'liga';
+    }
+
+    .material-icons.md-36 {
+      font-size: 36px;
+    }
+    .material-icons.md-24 {
+      font-size: 24px;
+    }
+    .material-icons.md-26 {
+      font-size: 26px;
+    }
+    .material-icons.red {
+      color: #0b046d;
+    }
+  </style>
+
+  <div id="MyDiv">
+    <img
+      src="https://1.bp.blogspot.com/-6ILoBRTsSLo/YLyhXS8eygI/AAAAAAAAAAM/AgtIa_ILTIg25l80me3AkFZoNi9cM7GzQCLcBGAsYHQ/s591/img1.png"
+      height="160" width="500">
+    <div style="height: 450px; width: 500px; background-color: #f8c3c7;">
+      <div class="pt-4"></div>
+      <div class="container">
+
+        <form id="myform1" method="post" autocomplete="off" action="" name="hello-sheet">
+          <div class="form-row">
+            <label class="font1" >ชื่อ-สกุล</label>
+            <div class="input-group col-md-12">
+              <span class="material-icons md-36 red">person</span>
+              <select class="form-control font1" name="คำนำหน้าชื่อ">
+                <option value="" disabled selected>เลือกคำนำหน้าชื่อ</option>
+                <option value="เด็กชาย">เด็กชาย</option>
+                <option value="เด็กหญิง">เด็กหญิง</option>
+                <option value="นาย">นาย</option>
+                <option value="นางสาว">นางสาว</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-6"><br>
+              <input type="text" class="form-control font1" placeholder="ใส่ชื่อจริง" name="ชื่อ">
+            </div>
+
+            <div class="form-group col-md-6"><br>
+              <input type="text" class="form-control font1" placeholder="ใส่นามสกุล" name="สกุล">
+            </div>
+
+            <div class="form-group col-md-6">
+              <span class="material-icons md-24 red">
+                contact_mail
+                </span>
+                <label class="font1" >เลขประจำตัวนักเรียน</label>
+              <input type="text area" maxlength="5" class="form-control font1" placeholder="เลขประจำตัวนักเรียน"
+                name="เลขประจำตัวนักเรียน">
+            </div>
+
+            <div class="form-group col-md-6">
+              <span class="material-icons md-28 red">
+                badge
+                </span>
+                <label class="font1" >เลขบัตรประจำตัวประชาชน</label>
+              <input type="text area" maxlength="13" class="form-control font1" placeholder="เลขบัตรประจำตัวประชาชน"
+                name="เลขบัตรประจำตัวประชาชน">
+            </div>
+
+            <div class="input-group col-md-6">
+              <label class="font1" >ชั้น</label><br>
+              <span class="material-icons md-36 red">school</span><br>
+              <select class="form-control font1" name="ชั้น">
+                <option value="" disabled selected>ม.</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </select>
+            </div>
+
+            <div class="input-group col-md-6">
+              <span class="material-icons md-36 red">meeting_room</span><br>
+              <select class="form-control font1" name="ห้อง">
+                <option value="" disabled selected>ห้อง</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+              </select><br>
+            </div><br>
+            <div class="form-group col-md-12"><br>
+              <input type="number" min="1" max="99" class="form-control font1" placeholder=" เลขที่" name="เลขที่">
+            </div>
+            <div class="font1" id="formbox">
+              <button type="submit" name="submit" value="Send message" class="btn btn-primary">ลงทะเบียน</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyxW0S0SeNJUmFWeb4HuUDIy7B7XPXqFulydz1Zmlkkb3_cj2mN_ISF4dn-dpQHntZx/exec'
+    const form = document.forms['hello-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("บันทึกข้อมูลเรียบร้อยแล้ว.."))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const loadEl = document.querySelector('#load');
+      // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+      // // The Firebase SDK is initialized and available here!
+      //
+      // firebase.auth().onAuthStateChanged(user => { });
+      // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+      // firebase.firestore().doc('/foo/bar').get().then(() => { });
+      // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+      // firebase.messaging().requestPermission().then(() => { });
+      // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+      // firebase.analytics(); // call to activate
+      // firebase.analytics().logEvent('tutorial_completed');
+      // firebase.performance(); // call to activate
+      //
+      // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+      try {
+        let app = firebase.app();
+        let features = [
+          'auth',
+          'database',
+          'firestore',
+          'functions',
+          'messaging',
+          'storage',
+          'analytics',
+          'remoteConfig',
+          'performance',
+        ].filter(feature => typeof app[feature] === 'function');
+        loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+      } catch (e) {
+        console.error(e);
+        loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+      }
+    });
+  </script>
+</body>
+
+</html>
