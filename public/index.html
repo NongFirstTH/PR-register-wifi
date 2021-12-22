@@ -262,26 +262,53 @@
             <div class="form-group col-md-12"><br>
               <input type="number" min="1" max="99" class="form-control font1" placeholder=" เลขที่" name="เลขที่">
             </div>
-            <div class="font1" id="formbox">
-              <button type="submit" name="submit" value="Send message" class="btn btn-primary">ลงทะเบียน</button>
-            </div>
+
           </div>
         </form>
       </div>
     </div>
   </div>
   </div>
+  <button type="submit" name="submit" value="Send message" class="btn btn-primary">บันทึก</button>
   <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyxW0S0SeNJUmFWeb4HuUDIy7B7XPXqFulydz1Zmlkkb3_cj2mN_ISF4dn-dpQHntZx/exec'
-    const form = document.forms['hello-sheet']
+          const scriptURL = 'https://script.google.com/macros/s/AKfycbz_Wz7kKmuUTHWIatbhzbNtADYTKhkfPvg3x6nPCayuAS71RXeVBagu8syDQWiTbWHY/exec'
+          const form = document.forms['hello-sheet']
   
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => alert("บันทึกข้อมูลเรียบร้อยแล้ว.."))
-        .catch(error => console.error('Error!', error.message))
-    })
-  </script>
+          form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+              .then(response => alert("บันทึกข้อมูลเรียบร้อยแล้ว.."))
+              .catch(error => console.error('Error!', error.message))
+          })
+   $(function () {
+  
+        // เมื่อ submit form id myform1    
+        $("#myform1").on("submit", function () {
+  
+          // เก็บชุดข้อมูลที่ต้องการส่งทั้งหมดไว้ในตัวแปร str
+          var str = $("#myform1").serialize();
+          $.post("getdata.php", str, function (data) { // ส่งข้อมูลแบบ post 
+            console.log(data); // คืนค่า data จากข้อมูลที่แสดงในไฟล์ getdata.php
+            $("#myform1")[0].reset(); // reset form
+          });
+          return false;  // ปิดการใช้งานการ submit form แบบปกติ
+  
+        });
+  
+      });
+        </script>
+        <script> document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems, options);
+          });
+  
+          // Or with jQuery
+  
+          $(document).ready(function () {
+            $('select').formSelect();
+          });
+          </script>
+  
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
