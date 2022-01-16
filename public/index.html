@@ -191,7 +191,7 @@
             <label class="font1" >ชื่อ-สกุล</label>
             <div class="input-group col-md-12">
               <span class="material-icons md-36 red">person</span>
-              <select class="form-control font1" name="คำนำหน้าชื่อ">
+              <select class="form-control font1" name="คำนำหน้าชื่อ" required>
                 <option value="" disabled selected>เลือกคำนำหน้าชื่อ</option>
                 <option value="เด็กชาย">เด็กชาย</option>
                 <option value="เด็กหญิง">เด็กหญิง</option>
@@ -201,11 +201,11 @@
             </div>
 
             <div class="form-group col-md-6"><br>
-              <input type="text" class="form-control font1" placeholder="ใส่ชื่อจริง" name="ชื่อ">
+              <input type="text" class="form-control font1" placeholder="ใส่ชื่อจริง" name="ชื่อ" required>
             </div>
 
             <div class="form-group col-md-6"><br>
-              <input type="text" class="form-control font1" placeholder="ใส่นามสกุล" name="สกุล">
+              <input type="text" class="form-control font1" placeholder="ใส่นามสกุล" name="สกุล" required>
             </div>
 
             <div class="form-group col-md-6">
@@ -213,8 +213,7 @@
                 contact_mail
                 </span>
                 <label class="font1" >เลขประจำตัวนักเรียน</label>
-              <input type="text area" maxlength="5" class="form-control font1" placeholder="เลขประจำตัวนักเรียน"
-                name="เลขประจำตัวนักเรียน">
+              <input type="text area" maxlength="5" class="form-control font1" placeholder="เลขประจำตัวนักเรียน" name="เลขประจำตัวนักเรียน" required>
             </div>
 
             <div class="form-group col-md-6">
@@ -222,14 +221,13 @@
                 badge
                 </span>
                 <label class="font1" >เลขบัตรประจำตัวประชาชน</label>
-              <input type="text area" maxlength="13" class="form-control font1" placeholder="เลขบัตรประจำตัวประชาชน"
-                name="เลขบัตรประจำตัวประชาชน">
+              <input type="text area" maxlength="13" class="form-control font1" placeholder="เลขบัตรประจำตัวประชาชน" name="เลขบัตรประจำตัวประชาชน" required>
             </div>
 
             <div class="input-group col-md-6">
               <label class="font1" >ชั้น</label><br>
               <span class="material-icons md-36 red">school</span><br>
-              <select class="form-control font1" name="ชั้น">
+              <select class="form-control font1" name="ชั้น" required>
                 <option value="" disabled selected>ม.</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -242,7 +240,7 @@
 
             <div class="input-group col-md-6">
               <span class="material-icons md-36 red">meeting_room</span><br>
-              <select class="form-control font1" name="ห้อง">
+              <select class="form-control font1" name="ห้อง" required>
                 <option value="" disabled selected>ห้อง</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -260,7 +258,7 @@
               </select><br>
             </div><br>
             <div class="form-group col-md-12"><br>
-              <input type="number" min="1" max="99" class="form-control font1" placeholder=" เลขที่" name="เลขที่">
+              <input type="number" min="1" max="99" class="form-control font1" placeholder=" เลขที่" name="เลขที่" required>
             </div>
             <div class="font1" id="formbox">
               <button type="submit" name="submit" value="Send message" class="btn btn-primary">ลงทะเบียน</button>
@@ -272,7 +270,7 @@
   </div>
   </div>
   <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyxW0S0SeNJUmFWeb4HuUDIy7B7XPXqFulydz1Zmlkkb3_cj2mN_ISF4dn-dpQHntZx/exec'
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbz2_elLA61uLKb-_s326Axp9cmopLJTEiv4TZUN-4JEIcu1xZ2n3Qzr0Q2HWgn__Bu_UQ/exec'
     const form = document.forms['hello-sheet']
   
     form.addEventListener('submit', e => {
@@ -282,52 +280,8 @@
         .catch(error => console.error('Error!', error.message))
     })
   </script>
-
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  
-
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const loadEl = document.querySelector('#load');
-      // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-      // // The Firebase SDK is initialized and available here!
-      //
-      // firebase.auth().onAuthStateChanged(user => { });
-      // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-      // firebase.firestore().doc('/foo/bar').get().then(() => { });
-      // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-      // firebase.messaging().requestPermission().then(() => { });
-      // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-      // firebase.analytics(); // call to activate
-      // firebase.analytics().logEvent('tutorial_completed');
-      // firebase.performance(); // call to activate
-      //
-      // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-      try {
-        let app = firebase.app();
-        let features = [
-          'auth',
-          'database',
-          'firestore',
-          'functions',
-          'messaging',
-          'storage',
-          'analytics',
-          'remoteConfig',
-          'performance',
-        ].filter(feature => typeof app[feature] === 'function');
-        loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-      } catch (e) {
-        console.error(e);
-        loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-      }
-    });
-  </script>
 </body>
 
 </html>
